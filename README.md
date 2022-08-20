@@ -4,7 +4,7 @@ This is a library that adds a ring style to SwiftUI's `ProgressViewStyle`. The d
 
 ## Example
 
-[ContentView.swift](./Sources/Showcase/ContentView.swift)
+[Example.swiftpm](./Example.swiftpm/ContentView.swift) can be opened in Swift Playgrounds app or Xcode.
 
 ![preview](preview.gif)
 
@@ -38,7 +38,7 @@ So I created a solution.
 
 ## How to Use
 
-Add this repository to your package dependencies in your app, and select the "RingProgressViewStyle" product. The "Showcase" product is an example app for Swift Playgrounds, so you don't need it when you want to use this package only as a library.
+Add this repository to your package dependencies in your app.
 
 ## Supported Platforms
 
