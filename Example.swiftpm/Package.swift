@@ -33,7 +33,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/kkk669/RingProgressViewStyle", "0.1.0"..<"0.2.0")
+        .package(url: "https://github.com/kkk669/RingProgressViewStyle", "0.2.0"..<"0.3.0")
     ],
     targets: [
         .executableTarget(

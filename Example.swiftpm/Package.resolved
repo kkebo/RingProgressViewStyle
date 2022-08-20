@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kkk669/RingProgressViewStyle",
       "state" : {
-        "revision" : "7177dabca6a00d8249ab47d25b49d3813bef5944",
-        "version" : "0.1.0"
+        "revision" : "39b8c105f87a0c0686cf75a18ae44a92bc754e83",
+        "version" : "0.2.0"
       }
     }
   ],
