@@ -1,6 +1,6 @@
 # RingProgressViewStyle
 
-This is a library that adds a ring style to SwiftUI's `ProgressViewStyle`. The default apperance is based on the `.linear` style of `ProgressViewStyle`, but you can customize colors and a stroke style.
+RingProgressViewStyle is a library that adds a ring style to SwiftUI's `ProgressViewStyle`. The default apperance is based on the `.linear` style of `ProgressViewStyle`, but you can customize colors and a stroke style.
 
 ## Example
 
