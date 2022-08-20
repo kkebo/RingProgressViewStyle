@@ -43,4 +43,5 @@ Add this repository to your package dependencies in your app.
 ## Supported Platforms
 
 - iOS 14+
+- iPadOS 14+
 - macOS 11+
