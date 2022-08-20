@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Showcase",
+    name: "RingProgressViewStyle",
     platforms: [
         .iOS(.v14),
         .macOS(.v11),
