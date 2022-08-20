@@ -36,6 +36,10 @@ But it occurs a compilation error because `trim` returns `some Shape` that doesn
 
 So I created a solution.
 
+## How to Use
+
+Add this repository to your package dependencies in your app, and select the "RingProgressViewStyle" product. The "Showcase" product is an example app for Swift Playgrounds, so you don't need it when you want to use this package only as a library.
+
 ## Supported Platforms
 
 - iOS 14+
