@@ -15,7 +15,7 @@ RingProgressViewStyle is a library that adds a ring style to SwiftUI's `Progress
 
 The `.circular` style already exists in `ProgressViewStyle`, but it's just an indicator, not a progress bar. So basically, you have to implement that by yourself.
 
-Fortunately, if you google "SwiftUI progress ring", you can see a number of code examples. Almost all of them looks like:
+Fortunately, if you google "SwiftUI progress ring", you can find a number of code examples. Almost all of them looks like:
 
 ```swift
 Circle()
