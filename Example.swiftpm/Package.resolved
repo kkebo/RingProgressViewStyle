@@ -3,7 +3,7 @@
     {
       "identity" : "ringprogressviewstyle",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kkk669/RingProgressViewStyle",
+      "location" : "https://github.com/kkebo/RingProgressViewStyle",
       "state" : {
         "revision" : "39b8c105f87a0c0686cf75a18ae44a92bc754e83",
         "version" : "0.2.0"
