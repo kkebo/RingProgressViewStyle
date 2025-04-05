@@ -8,7 +8,7 @@ struct ContentView {
         if self.progress >= 1 {
             self.progress = 0
         }
-        try await Task.sleep(nanoseconds: 1 * 1000000000)
+        try await Task.sleep(nanoseconds: 1 * 1_000_000_000)
         self.progress += 0.1
         try await self.increment()
     }
@@ -63,7 +63,7 @@ extension ContentView: View {
                             .init(
                                 colors: [
                                     Color(red: 200 / 255, green: 168 / 255, blue: 240 / 255),
-                                    Color(red: 71 / 255, green: 33 / 255, blue: 158 / 255)
+                                    Color(red: 71 / 255, green: 33 / 255, blue: 158 / 255),
                                 ]
                             ),
                             center: .center,

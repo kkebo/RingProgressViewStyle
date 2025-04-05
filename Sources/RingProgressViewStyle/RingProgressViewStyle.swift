@@ -1,10 +1,12 @@
 import SwiftUI
 
+/// A progress view that visually indicates its progress using a ring.
 public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeStyle> {
     private let foregroundStyle: Foreground
     private let backgroundStyle: Background
     private let strokeStyle: StrokeStyle
 
+    /// Creates a ring progress view style.
     @available(iOS 15, macOS 12, *)
     public init(stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round))
     where
@@ -16,6 +18,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
         self.strokeStyle = stroke
     }
 
+    /// Creates a ring progress view style.
     @available(iOS, obsoleted: 15)
     @available(macOS, obsoleted: 12)
     public init(stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round))
@@ -28,6 +31,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
         self.strokeStyle = stroke
     }
 
+    /// Creates a ring progress view style.
     public init(
         foreground: Foreground,
         stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round)
@@ -37,6 +41,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
         self.strokeStyle = stroke
     }
 
+    /// Creates a ring progress view style.
     @available(iOS 15, macOS 12, *)
     public init(
         background: Background,
@@ -47,6 +52,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
         self.strokeStyle = stroke
     }
 
+    /// Creates a ring progress view style.
     @available(iOS, obsoleted: 15)
     @available(macOS, obsoleted: 12)
     public init(
@@ -58,6 +64,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
         self.strokeStyle = stroke
     }
 
+    /// Creates a ring progress view style.
     public init(
         foreground: Foreground,
         background: Background,
@@ -70,6 +77,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
 }
 
 extension RingProgressViewStyle: ProgressViewStyle {
+    /// Creates a view representing the body of a progress view.
     public func makeBody(configuration: Self.Configuration) -> some View {
         HStack {
             self.ring(value: configuration.fractionCompleted ?? 0)
@@ -114,7 +122,7 @@ struct ProgressRing_Previews: PreviewProvider {
             if self.progress >= 1 {
                 self.progress = 0
             }
-            try await Task.sleep(nanoseconds: 1 * 1000000000)
+            try await Task.sleep(nanoseconds: 1 * 1_000_000_000)
             self.progress += 0.1
             try await self.increment()
         }
@@ -193,7 +201,7 @@ struct ProgressRing_Previews: PreviewProvider {
                                 .init(
                                     colors: [
                                         Color(red: 200 / 255, green: 168 / 255, blue: 240 / 255),
-                                        Color(red: 71 / 255, green: 33 / 255, blue: 158 / 255)
+                                        Color(red: 71 / 255, green: 33 / 255, blue: 158 / 255),
                                     ]
                                 ),
                                 center: .center,
