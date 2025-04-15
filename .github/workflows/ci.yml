@@ -1,0 +1,19 @@
+name: ci
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  lint:
+    runs-on: ubuntu-24.04-arm
+    container: swift:6.1
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift format lint -rsp .
+  yamllint:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - run: yamllint --version
+      - run: yamllint --strict --config-file .yamllint.yml .

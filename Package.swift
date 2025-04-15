@@ -17,6 +17,6 @@ let package = Package(
     targets: [
         .target(
             name: "RingProgressViewStyle"
-        ),
+        )
     ]
 )
