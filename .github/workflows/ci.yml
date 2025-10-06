@@ -5,6 +5,34 @@ on:
   pull_request:
     branches: ["main"]
 jobs:
+  build-macos:
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - run: xcrun swift --version
+      - run: xcrun swift build
+  build-ios:
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - run: xcrun swift --version
+      - run: xcrun swift build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios
+  build-sample-app:
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app
+    defaults:
+      run:
+        working-directory: ./Example.swiftpm
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - run: xcodebuild -version
+      - run: xcodebuild -list
+      - run: xcodebuild build -scheme Example -destination "platform=iOS Simulator,name=iPad Pro 13-inch (M4)" -quiet -showBuildTimingSummary
   lint:
     runs-on: ubuntu-24.04-arm
     container: swift:6.2
