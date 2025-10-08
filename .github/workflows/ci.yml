@@ -11,6 +11,15 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_26.0.1.app
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: |
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/org.swift.swiftpm
+            ~/.swiftpm
+            .build
+          key: ${{ runner.os }}-swiftpm-${{ hashFiles('Package.resolved') }}
+          restore-keys: ${{ runner.os }}-swiftpm-
       - run: xcrun swift --version
       - run: xcrun swift build
   build-ios:
@@ -19,6 +28,15 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_26.0.1.app
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: |
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/org.swift.swiftpm
+            ~/.swiftpm
+            .build
+          key: ${{ runner.os }}-ios-swiftpm-${{ hashFiles('Package.resolved') }}
+          restore-keys: ${{ runner.os }}-ios-swiftpm-
       - run: xcrun swift --version
       - run: xcrun swift build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios
   build-sample-app:
@@ -30,9 +48,17 @@ jobs:
         working-directory: ./Example.swiftpm
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: |
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/org.swift.swiftpm
+            ~/.swiftpm
+            Example.swiftpm/.derivedData
+          key: ${{ runner.os }}-xcode-26.0.1-${{ hashFiles('Example.swiftpm/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-xcode-26.0.1-
       - run: xcodebuild -version
-      - run: xcodebuild -list
-      - run: xcodebuild build -scheme Example -destination "platform=iOS Simulator,name=iPad Pro 13-inch (M4)" -quiet -showBuildTimingSummary
+      - run: xcodebuild build -scheme Example -destination "platform=iOS Simulator,name=iPad Pro 13-inch (M4)" -derivedDataPath ./.derivedData -quiet -showBuildTimingSummary
   lint:
     runs-on: ubuntu-24.04-arm
     container: swift:6.2
