@@ -68,7 +68,7 @@ jobs:
           key: ${{ runner.os }}-xcode-26.0.1-${{ hashFiles('Example.swiftpm/Package.resolved') }}
           restore-keys: ${{ runner.os }}-xcode-26.0.1-
       - run: xcodebuild -version
-      - run: xcodebuild build -scheme Example -destination "platform=iOS Simulator,name=iPad Pro 13-inch (M4)" -derivedDataPath ./.derivedData -quiet -showBuildTimingSummary
+      - run: xcodebuild build -scheme Example -destination "platform=iOS Simulator,name=iPad Pro 13-inch (M4),OS=26.0.1" -derivedDataPath ./.derivedData -quiet -showBuildTimingSummary
   lint:
     runs-on: ubuntu-24.04-arm
     container: swift:6.2
