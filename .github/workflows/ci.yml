@@ -71,7 +71,7 @@ jobs:
       - run: xcodebuild build -scheme Example -destination "platform=iOS Simulator,name=iPad Pro 13-inch (M5),OS=26.5" -derivedDataPath ./.derivedData -quiet -showBuildTimingSummary
   lint:
     runs-on: ubuntu-24.04-arm
-    container: swift:6.2
+    container: swift:6.3
     permissions:
       contents: read
     steps:
