@@ -26,7 +26,7 @@ extension InsetArc: Shape {
                 radius: min(rect.width, rect.height) / 2 - self.insetAmount,
                 startAngle: self.startAngle,
                 endAngle: self.endAngle,
-                clockwise: false
+                clockwise: false,
             )
         }
     }

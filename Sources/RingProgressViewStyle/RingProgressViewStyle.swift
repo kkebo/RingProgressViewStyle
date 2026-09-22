@@ -34,7 +34,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
     /// Creates a ring progress view style.
     public init(
         foreground: Foreground,
-        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round)
+        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round),
     ) where Background == Color {
         self.foregroundStyle = foreground
         self.backgroundStyle = Color.secondary.opacity(0.2)
@@ -45,7 +45,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
     @available(iOS 15, macOS 12, *)
     public init(
         background: Background,
-        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round)
+        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round),
     ) where Foreground == TintShapeStyle {
         self.foregroundStyle = .tint
         self.backgroundStyle = background
@@ -57,7 +57,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
     @available(macOS, obsoleted: 12)
     public init(
         background: Background,
-        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round)
+        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round),
     ) where Foreground == Color {
         self.foregroundStyle = .accentColor
         self.backgroundStyle = background
@@ -68,7 +68,7 @@ public struct RingProgressViewStyle<Foreground: ShapeStyle, Background: ShapeSty
     public init(
         foreground: Foreground,
         background: Background,
-        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round)
+        stroke: StrokeStyle = .init(lineWidth: 4.0, lineCap: .round),
     ) {
         self.foregroundStyle = foreground
         self.backgroundStyle = background
@@ -188,7 +188,7 @@ struct ProgressRing_Previews: PreviewProvider {
                         RingProgressViewStyle(
                             foreground: .green,
                             background: .red,
-                            stroke: .init(lineWidth: 5, lineCap: .butt)
+                            stroke: .init(lineWidth: 5, lineCap: .butt),
                         )
                     )
                     .frame(width: 80, height: 80)
@@ -206,9 +206,9 @@ struct ProgressRing_Previews: PreviewProvider {
                                 ),
                                 center: .center,
                                 startAngle: .zero,
-                                endAngle: .degrees(self.progress * 360)
+                                endAngle: .degrees(self.progress * 360),
                             ),
-                            stroke: .init(lineWidth: 20, lineCap: .round)
+                            stroke: .init(lineWidth: 20, lineCap: .round),
                         )
                     )
                     .frame(width: 100, height: 100)
