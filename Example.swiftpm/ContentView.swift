@@ -50,7 +50,7 @@ extension ContentView: View {
                     RingProgressViewStyle(
                         foreground: .green,
                         background: .red,
-                        stroke: .init(lineWidth: 5, lineCap: .butt)
+                        stroke: .init(lineWidth: 5, lineCap: .butt),
                     )
                 )
                 .frame(width: 80, height: 80)
@@ -68,9 +68,9 @@ extension ContentView: View {
                             ),
                             center: .center,
                             startAngle: .zero,
-                            endAngle: .degrees(self.progress * 360)
+                            endAngle: .degrees(self.progress * 360),
                         ),
-                        stroke: .init(lineWidth: 20, lineCap: .round)
+                        stroke: .init(lineWidth: 20, lineCap: .round),
                     )
                 )
                 .frame(width: 100, height: 100)

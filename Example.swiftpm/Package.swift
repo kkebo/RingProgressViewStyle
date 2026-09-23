@@ -29,7 +29,7 @@ let package = Package(
                 .landscapeRight,
                 .landscapeLeft,
                 .portraitUpsideDown(.when(deviceFamilies: [.pad])),
-            ]
+            ],
         )
     ],
     dependencies: [
@@ -41,7 +41,7 @@ let package = Package(
             dependencies: [
                 "RingProgressViewStyle"
             ],
-            path: "."
+            path: ".",
         )
-    ]
+    ],
 )

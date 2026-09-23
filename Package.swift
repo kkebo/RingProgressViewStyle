@@ -11,12 +11,12 @@ let package = Package(
     products: [
         .library(
             name: "RingProgressViewStyle",
-            targets: ["RingProgressViewStyle"]
+            targets: ["RingProgressViewStyle"],
         )
     ],
     targets: [
         .target(
             name: "RingProgressViewStyle"
         )
-    ]
+    ],
 )
