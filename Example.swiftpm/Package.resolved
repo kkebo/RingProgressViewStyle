@@ -1,4 +1,5 @@
 {
+  "originHash" : "3ea7463b20e2d176e07f1828162c540030f10c72415d473320570cf933d004ea",
   "pins" : [
     {
       "identity" : "ringprogressviewstyle",
@@ -10,5 +11,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
