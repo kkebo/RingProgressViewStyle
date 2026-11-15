@@ -45,8 +45,11 @@ jobs:
             .build
           key: ${{ runner.os }}-ios-swiftpm-${{ hashFiles('Package.resolved') }}
           restore-keys: ${{ runner.os }}-ios-swiftpm-
-      - run: xcrun swift --version
-      - run: xcrun swift build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios
+      - run: echo "SWIFT=$(xcrun -f swift)" >> "$GITHUB_ENV"
+      - run: |
+          "$SWIFT" --version
+      - run: |
+          "$SWIFT" build --sdk "$(xcrun --sdk iphoneos --show-sdk-path)" --triple arm64-apple-ios
   build-sample-app:
     runs-on: macos-26
     env:
